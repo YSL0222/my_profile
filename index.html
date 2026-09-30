@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="이영성 | 스포츠 생체역학 연구자 · 교육자" />
+  <title>이영성 | Sports Biomechanics Researcher & Educator</title>
+  <style>
+    :root{
+      --bg:#f7f7f5;
+      --surface:#ffffff;
+      --text:#111111;
+      --muted:#666;
+      --line:#deded9;
+      --accent:#111;
+      --max:1180px;
+      --nav-h:72px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 24px)}
+    body{
+      margin:0;
+      color:var(--text);
+      background:var(--bg);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR","Apple SD Gothic Neo",Arial,sans-serif;
+      line-height:1.7;
+      letter-spacing:-.015em;
+    }
+    a{color:inherit;text-decoration:none}
+    .nav{
+      position:fixed;top:0;left:0;right:0;height:var(--nav-h);
+      z-index:1000;background:rgba(247,247,245,.88);
+      backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(0,0,0,.08);
+    }
+    .nav-inner{
+      max-width:var(--max);height:100%;margin:auto;padding:0 28px;
+      display:flex;align-items:center;justify-content:space-between;gap:28px;
+    }
+    .brand{font-weight:750;letter-spacing:-.03em;white-space:nowrap}
+    .brand span{font-weight:450;color:var(--muted);margin-left:8px}
+    .nav-links{display:flex;align-items:center;gap:4px;overflow-x:auto}
+    .nav-links a{
+      padding:8px 11px;border-radius:999px;font-size:14px;white-space:nowrap;
+      color:#444;transition:.2s ease;
+    }
+    .nav-links a:hover,.nav-links a.active{background:#111;color:#fff}
+    main{padding-top:var(--nav-h)}
+    .container{max-width:var(--max);margin:auto;padding:0 28px}
+    section{padding:104px 0;border-bottom:1px solid var(--line)}
+    .hero{
+      min-height:calc(100vh - var(--nav-h));display:flex;align-items:center;
+      padding:110px 0 90px;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:80px;align-items:end}
+    .eyebrow{
+      font-size:13px;text-transform:uppercase;letter-spacing:.14em;
+      color:var(--muted);font-weight:700;margin-bottom:22px;
+    }
+    h1{
+      margin:0;font-size:clamp(52px,8vw,104px);line-height:.95;
+      letter-spacing:-.065em;font-weight:780;
+    }
+    .hero-title{
+      margin:28px 0 0;font-size:clamp(20px,2.5vw,30px);
+      line-height:1.35;font-weight:600;max-width:760px;
+    }
+    .hero-desc{margin:28px 0 0;max-width:720px;color:#555;font-size:17px}
+    .hero-side{border-top:2px solid #111;padding-top:18px}
+    .hero-side-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+    .hero-side-value{font-size:20px;font-weight:650;margin-top:10px}
+    .section-head{display:grid;grid-template-columns:.32fr 1fr;gap:50px;margin-bottom:55px}
+    .section-num{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.12em}
+    h2{font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-.055em;margin:0}
+    h3{font-size:22px;line-height:1.3;margin:0 0 12px;letter-spacing:-.035em}
+    .lead{font-size:18px;color:#4e4e4e;max-width:800px;margin:18px 0 0}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+    .subsection{margin-top:48px}
+    .subsection:first-child{margin-top:0}
+    .subsection p{color:#555;margin:0 0 22px}
+    .list{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+    .list li{
+      padding:15px 0;border-bottom:1px solid var(--line);
+      display:flex;gap:15px;align-items:flex-start;
+    }
+    .list li::before{content:"—";color:#999;flex:0 0 auto}
+    .timeline{border-top:1px solid var(--line)}
+    .timeline-item{
+      display:grid;grid-template-columns:190px 1fr;gap:35px;
+      padding:25px 0;border-bottom:1px solid var(--line);
+    }
+    .period{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+    .institution{font-size:20px;font-weight:700;letter-spacing:-.03em}
+    .role{color:#555;margin-top:3px}
+    .research-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .research-card{
+      background:var(--surface);border:1px solid var(--line);padding:30px;
+      min-height:220px;
+    }
+    .research-card .tag{
+      font-size:11px;text-transform:uppercase;letter-spacing:.12em;
+      color:#777;font-weight:700;margin-bottom:24px;
+    }
+    .research-card h3{font-size:25px}
+    .research-card p{color:#555;margin:0}
+    .activity-list{border-top:1px solid var(--line)}
+    .activity{
+      display:grid;grid-template-columns:1fr auto;gap:30px;
+      padding:21px 0;border-bottom:1px solid var(--line);align-items:center;
+    }
+    .activity strong{font-weight:700}
+    .activity span{color:#666}
+    .badge{
+      display:inline-flex;padding:6px 10px;border:1px solid #ccc;border-radius:999px;
+      font-size:12px;color:#555;white-space:nowrap
+    }
+    .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .skill-card{background:#111;color:#fff;padding:30px;min-height:230px}
+    .skill-card h3{color:#fff}
+    .skill-card .list{border-color:#333}
+    .skill-card .list li{border-color:#333;color:#ddd}
+    .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 50px;border-top:1px solid var(--line)}
+    .cert{
+      padding:19px 0;border-bottom:1px solid var(--line);font-weight:550
+    }
+    .contact{
+      background:#111;color:#fff;border-bottom:0;
+    }
+    .contact .section-num{color:#aaa}
+    .contact h2{color:#fff}
+    .email{
+      display:inline-block;margin-top:34px;font-size:clamp(25px,4vw,44px);
+      letter-spacing:-.04em;border-bottom:1px solid #777;padding-bottom:7px;
+    }
+    footer{background:#111;color:#777;padding:25px 28px;text-align:center;font-size:12px}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:900px){
+      .nav-inner{padding:0 18px}
+      .brand span{display:none}
+      .nav-links a{font-size:12px;padding:7px 8px}
+      .container{padding:0 20px}
+      section{padding:78px 0}
+      .hero{padding:80px 0}
+      .hero-grid,.two-col,.research-grid{grid-template-columns:1fr;gap:42px}
+      .section-head{grid-template-columns:1fr;gap:14px;margin-bottom:38px}
+      .timeline-item{grid-template-columns:1fr;gap:6px}
+      .skill-grid{grid-template-columns:1fr}
+      .cert-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:560px){
+      :root{--nav-h:62px}
+      .nav-inner{gap:10px}
+      .brand{font-size:14px}
+      .nav-links{max-width:68vw}
+      h1{font-size:54px}
+      .hero-title{font-size:20px}
+      .hero-desc,.lead{font-size:16px}
+      .research-card{padding:24px}
+      .activity{grid-template-columns:1fr;gap:8px}
+      .email{font-size:24px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="주요 메뉴">
+    <div class="nav-inner">
+      <a class="brand" href="#home">이영성<span>Lee Yeong Seong</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#career">Career</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#research">Research</a>
+        <a href="#development">Development</a>
+        <a href="#academic">Academic</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#skills">Skills</a>
+        <a href="#profile">Profile</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid reveal">
+        <div>
+          <div class="eyebrow">Sports Biomechanics Researcher · Educator</div>
+          <h1>이영성</h1>
+          <div class="hero-title">스포츠 생체역학 연구자 · 교육자</div>
+          <p class="hero-desc">스포츠 생체역학을 기반으로 인간의 움직임을 분석하고, 스포츠 데이터와 AI 기술의 교육·연구 적용을 수행하는 연구자이자 교육자</p>
+        </div>
+        <div class="hero-side">
+          <div class="hero-side-label">Focus</div>
+          <div class="hero-side-value">Sports Biomechanics / Motion Analysis / Data / AI</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-num">01 / ABOUT</div>
+          <div>
+            <h2>About Me</h2>
+            <p class="lead">스포츠 생체역학과 운동역학을 기반으로 인간의 움직임과 달리기 시 충격 특성을 연구해 왔습니다. 대학에서 운동역학, 데이터 분석, 프로그래밍 및 AI 활용 관련 교육을 수행하고 있으며, 스포츠 현장에서 활용할 수 있는 동작분석 및 데이터 기반 기술 개발에도 참여하고 있습니다.</p>
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="subsection">
+            <h3>관심 분야</h3>
+            <ul class="list">
+              <li>스포츠 생체역학</li><li>운동역학</li><li>인간 움직임 분석</li>
+              <li>달리기 및 충격 분석</li><li>스포츠 데이터 분석</li><li>AI 기반 스포츠 동작분석</li>
+            </ul>
+          </div>
+          <div class="subsection">
+            <h3>주요 강점</h3>
+            <ul class="list">
+              <li>스포츠 동작 및 생체역학 데이터 분석</li><li>스포츠 연구 수행</li>
+              <li>대학 교육</li><li>스포츠 동작분석 프로그램 개발 및 적용</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-num">02 / EDUCATION</div>
+          <h2>Education</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item"><div class="period">2005.03 ~ 2010.02</div><div><div class="institution">충북대학교</div><div class="role">천문우주학과 · 이학사</div></div></div>
+          <div class="timeline-item"><div class="period">2017.03 ~ 2019.08</div><div><div class="institution">한국체육대학교</div><div class="role">체육학과 운동역학 전공 · 체육학석사</div></div></div>
+          <div class="timeline-item"><div class="period">2020.03 ~ 2023.02</div><div><div class="institution">한국체육대학교</div><div class="role">체육학과 운동역학 전공 · 이학박사</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="career">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-num">03 / CAREER</div>
+          <h2>Career</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item"><div class="period">2024.03 ~</div><div><div class="institution">서경대학교</div><div class="role">특임교수·연구교수</div></div></div>
+          <div class="timeline-item"><div class="period">2023.08 ~ 2023.12</div><div><div class="institution">중앙대학교</div><div class="role">강사</div></div></div>
+          <div class="timeline-item"><div class="period">2023.03 ~ 2025.02</div><div><div class="institution">성결대학교</div><div class="role">강사</div></div></div>
+          <div class="timeline-item"><div class="period">2022.08 ~ 2024.08</div><div><div class="institution">한국체육대학교</div><div class="role">강사</div></div></div>
+          <div class="timeline-item"><div class="period">2018.03 ~ 2024.09</div><div><div class="institution">한국체육대학교</div><div class="role">보조연구원</div></div></div>
+          <div class="timeline-item"><div class="period">2015.08 ~ 2017.04</div><div><div class="institution">대한스포츠아카데미협회</div><div class="role">사원</div></div></div>
+          <div class="timeline-item"><div class="period">2015.03 ~ 2015.05</div><div><div class="institution">서울세계시각장애인경기대회 조직위원회</div><div class="role">기획운영본부 문화홍보팀</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-num">04 / TEACHING</div>
+          <div><h2>Teaching</h2><p class="lead">스포츠와 데이터 기술을 연결하는 교육을 수행하고 있습니다.</p></div>
+        </div>
+        <ul class="list">
+          <li>파이썬 데이터 분석</li><li>기초융합프로그래밍</li><li>컴퓨팅 사고</li>
+          <li>AI 응용행동분석</li><li>운동역학</li><li>스포츠지도사 운동역학 교육</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-num">05 / RESEARCH</div>
+          <h2>Research</h2>
+        </div>
+        <div class="research-grid">
+          <article class="research-card">
+            <div class="tag">Sports Biomechanics</div>
+            <h3>스포츠 생체역학</h3>
+            <p>달리기와 인간 움직임을 중심으로 생체역학적 특성과 충격 메커니즘을 연구하고 있습니다.</p>
+            <ul class="list" style="margin-top:24px">
+              <li>달리기 시 인체 충격 및 충격 흡수 특성 연구</li>
+              <li>달리기 속도와 생체역학적 변인의 관계 분석</li>
+              <li>착지 유형에 따른 전신 충격 분석</li>
+              <li>가속도 센서를 활용한 달리기 충격 분석</li>
+              <li>신발 및 인솔의 생체역학적 기능 평가</li>
+            </ul>
+          </article>
+          <article class="research-card">
+            <div class="tag">Government · Industry</div>
+            <h3>정부·산업체 연구과제</h3>
+            <p>스포츠 현장과 산업에서 활용할 수 있는 생체역학 및 AI 기반 기술 연구에 참여했습니다.</p>
+            <ul class="list" style="margin-top:24px">
+              <li>한국연구재단 연구과제 참여</li>
+              <li>맞춤식 인솔 개발 연구</li>
+              <li>카본 러닝화 사용성 평가</li>
+              <li>신발 기능 검증을 위한 생체역학 연구</li>
+              <li>AI 기반 엘리트선수 동작분석 및 코칭 플랫폼 기술 연구</li>
+              <li>달리기 Dynamics 인식 알고리즘 및 평가 지표 개발</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="development">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-num">06 / DEVELOPMENT</div>
+          <div>
+            <h2>Sports Motion Analysis Development</h2>
+            <p class="lead">차세대 국가대표 선수를 위한 자동추적 기반 동작분석 자동화 시스템 개발</p>
+          </div>
+        </div>
+        <div class="research-card">
+          <h3>차세대 국가대표 선수를 위한 자동추적 기반 동작분석 자동화 시스템 개발</h3>
+          <p>한국스포츠과학원 「차세대 국가대표 선수를 위한 자동추적 기반 동작분석 자동화 시스템 개발」에 참여했습니다.</p>
+          <ul class="list" style="margin-top:25px">
+            <li>스포츠 동작분석 프로그램 개발</li>
+            <li>프로그램 개발 및 코딩 참여</li>
+            <li>자동추적 기반 동작분석 자동화 시스템 개발</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="academic">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-num">07 / ACADEMIC</div>
+          <div><h2>Academic Activities</h2><p class="lead">국내외 학술대회에서 스포츠 생체역학 및 운동역학 관련 연구를 발표했습니다.</p></div>
+        </div>
+        <div class="activity-list">
+          <div class="activity"><div><strong>International Society of Biomechanics 2023</strong></div><span class="badge">포스터 발표</span></div>
+          <div class="activity"><div><strong>Footwear Biomechanics Symposium 2023 in Osaka</strong></div><span class="badge">구두 발표</span></div>
+          <div class="activity"><div><strong>한국운동역학회 춘계 학술세미나</strong></div><span class="badge">구두 발표</span></div>
+          <div class="activity"><div><strong>한국운동역학회 학술대회</strong></div><span class="badge">구두 발표</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-num">08 / CERTIFICATIONS</div>
+          <h2>Certifications</h2>
+        </div>
+        <div class="cert-grid">
+          <div class="cert">노인체육지도사 보디빌딩 2급</div>
+          <div class="cert">BAV (Biomechanical Analyst of Visual3D, Visual3D 생체역학 분석사)</div>
+          <div class="cert">스포츠영상분석사</div>
+          <div class="cert">생활체육지도사 보디빌딩 2급</div>
+          <div class="cert">스포츠경영관리사</div>
+          <div class="cert">워드프로세서 2급</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-num">09 / SKILLS</div>
+          <h2>Skills</h2>
+        </div>
+        <div class="skill-grid">
+          <article class="skill-card"><h3>Sports Biomechanics</h3><ul class="list"><li>스포츠 생체역학 및 운동역학 분석</li><li>스포츠 동작분석</li><li>Visual3D 기반 생체역학 분석</li><li>스포츠 영상분석</li></ul></article>
+          <article class="skill-card"><h3>Data & AI</h3><ul class="list"><li>Python 데이터 분석 및 프로그래밍</li><li>AI를 활용한 스포츠 행동·동작분석</li><li>스포츠 동작분석 프로그램 개발</li></ul></article>
+          <article class="skill-card"><h3>Education</h3><ul class="list"><li>대학 강의</li><li>교육 콘텐츠 개발</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-num">10 / PROFILE</div>
+          <h2>Profile</h2>
+        </div>
+        <div class="research-card">
+          <h3>이영성 | Lee Yeong Seong</h3>
+          <p>스포츠 생체역학과 운동역학을 기반으로 인간의 움직임을 분석하고, 데이터와 AI 기술을 스포츠 연구 및 교육에 적용하고 있습니다. 연구와 교육을 넘어 스포츠 현장에서 활용 가능한 동작분석 기술과 데이터 기반 솔루션 개발에도 관심을 가지고 활동하고 있습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-num">11 / CONTACT</div>
+          <div><h2>Contact</h2><a class="email" href="mailto:lysorlys@skuniv.ac.kr">lysorlys@skuniv.ac.kr</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>이영성 | Lee Yeong Seong</footer>
+
+  <script>
+    const links = [...document.querySelectorAll('.nav-links a')];
+    const sections = [...document.querySelectorAll('main section[id]')];
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, {rootMargin:'-35% 0px -55% 0px', threshold:0});
+
+    sections.forEach(section => observer.observe(section));
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.08});
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
