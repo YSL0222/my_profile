@@ -52,7 +52,7 @@
       min-height:calc(100vh - var(--nav-h));display:flex;align-items:center;
       padding:110px 0 90px;
     }
-    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:80px;align-items:end}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:80px;align-items:center}
     .eyebrow{
       font-size:13px;text-transform:uppercase;letter-spacing:.14em;
       color:var(--muted);font-weight:700;margin-bottom:22px;
@@ -66,7 +66,23 @@
       line-height:1.35;font-weight:600;max-width:760px;
     }
     .hero-desc{margin:28px 0 0;max-width:720px;color:#555;font-size:17px}
-    .hero-side{border-top:2px solid #111;padding-top:18px}
+    
+    /* 프로필 이미지 스타일 추가 */
+    .profile-img-container {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .profile-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border: 1px solid var(--line);
+    }
+
+    .hero-side{border-top:2px solid #111;padding-top:18px;margin-top:24px}
     .hero-side-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
     .hero-side-value{font-size:20px;font-weight:650;margin-top:10px}
     .section-head{display:grid;grid-template-columns:.32fr 1fr;gap:50px;margin-bottom:55px}
@@ -191,9 +207,15 @@
           <div class="hero-title">스포츠 생체역학 연구자 · 교육자</div>
           <p class="hero-desc">스포츠 생체역학을 기반으로 인간의 움직임을 분석하고, 스포츠 데이터와 AI 기술의 교육·연구 적용을 수행하는 연구자이자 교육자</p>
         </div>
-        <div class="hero-side">
-          <div class="hero-side-label">Focus</div>
-          <div class="hero-side-value">Sports Biomechanics / Motion Analysis / Data / AI</div>
+        <div>
+          <!-- 프로필 사진 삽입 영역 -->
+          <div class="profile-img-container">
+            <img src="profile.jpg" alt="이영성 프로필 사진" class="profile-img" />
+          </div>
+          <div class="hero-side">
+            <div class="hero-side-label">Focus</div>
+            <div class="hero-side-value">Sports Biomechanics / Motion Analysis / Data / AI</div>
+          </div>
         </div>
       </div>
     </section>
